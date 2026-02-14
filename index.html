@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Love ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+#game {
+    height: 100vh;
+    position: relative;
+}
+
+#heart {
+    font-size: 60px;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#message {
+    display: none;
+    padding: 40px;
+}
+
+.card {
+    background: rgba(255,255,255,0.15);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    max-width: 600px;
+    margin: auto;
+}
+
+img {
+    width: 200px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="game">
+    <h2>Catch the heart 5 times to unlock your surprise 💖</h2>
+    <div id="heart">❤️</div>
+</div>
+
+<div id="message">
+    <div class="card">
+        <img src="yourphoto.jpg" alt="Our Love">
+        <h1>To My Beautiful Noor</h1>
+        <p>
+            You are my peace, my happiness, and my greatest blessing.
+            Every day with you is a gift from Allah.
+            Thank you for being my partner and the best mother to Yafa.
+        </p>
+        <p>
+            You are not just my Valentine... You are my forever ❤️
+        </p>
+        <p><i>With all my love, Anas</i></p>
+    </div>
+</div>
+
+<script>
+let heart = document.getElementById("heart");
+let count = 0;
+
+function moveHeart() {
+    let x = Math.random() * (window.innerWidth - 100);
+    let y = Math.random() * (window.innerHeight - 100);
+    heart.style.left = x + "px";
+    heart.style.top = y + "px";
+}
+
+heart.addEventListener("click", function() {
+    count++;
+    if(count >= 5){
+        document.getElementById("game").style.display = "none";
+        document.getElementById("message").style.display = "block";
+    } else {
+        moveHeart();
+    }
+});
+
+moveHeart();
+</script>
+
+</body>
+</html>
